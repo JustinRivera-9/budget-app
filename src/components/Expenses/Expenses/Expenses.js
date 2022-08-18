@@ -2,6 +2,7 @@ import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import Card from "../../UI/Card/Card";
 import NewExpense from "../../NewExpense/NewExpense/NewExpense";
 import "./Expenses.css";
+import CategoryFilter from "../../Filters/CategoryFilter/CategoryFilter";
 
 function Expenses(props) {
   const Items = [
@@ -53,6 +54,9 @@ function Expenses(props) {
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Card className="expenses">
+        <div>
+          <CategoryFilter />
+        </div>
         <ExpenseItem
           date={Items[0].date}
           title={Items[0].title}
