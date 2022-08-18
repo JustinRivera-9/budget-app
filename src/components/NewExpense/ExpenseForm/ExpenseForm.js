@@ -54,12 +54,7 @@ function ExpenseForm(props) {
       <div className="new-expense-form">
         <div className="new-expense_field">
           <label>Category: </label>
-          <select
-            onChange={categoryChangeHandler}
-            for="category"
-            id="category"
-            required
-          >
+          <select onChange={categoryChangeHandler} id="category" required>
             <option value="">Select Category</option>
             <option value="groceries">Groceries</option>
             <option value="gas">Gas</option>
@@ -87,7 +82,6 @@ function ExpenseForm(props) {
             onChange={titleChangeHandler}
             type="text"
             placeholder="Expense title"
-            for="title"
             id="title"
             value={enteredTitle}
             required
@@ -99,7 +93,6 @@ function ExpenseForm(props) {
             onChange={amountChangeHandler}
             type="number"
             placeholder="Expense amount"
-            for="amount"
             id="amount"
             value={enteredAmount}
             required

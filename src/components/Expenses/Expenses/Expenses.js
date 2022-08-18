@@ -3,6 +3,8 @@ import Card from "../../UI/Card/Card";
 import NewExpense from "../../NewExpense/NewExpense/NewExpense";
 import "./Expenses.css";
 import CategoryFilter from "../../Filters/CategoryFilter/CategoryFilter";
+import YearFilter from "../../Filters/YearFilter/YearFilter";
+import { useState } from "react";
 
 function Expenses(props) {
   const Items = [
@@ -11,43 +13,62 @@ function Expenses(props) {
       date: new Date(2022, 8, 10),
       title: "King Soopers",
       amount: "129.37",
-      category: "Groceries",
+      category: "groceries",
     },
     {
       //id: b2,
       date: new Date(2022, 8, 16),
       title: "Gas",
       amount: "59.26",
-      category: "Gas",
+      category: "gas",
     },
     {
       //id: b3,
       date: new Date(2022, 8, 25),
       title: "Denver Beer Co.",
       amount: "31.59",
-      category: "Going Out",
+      category: "going out",
     },
     {
       // id: b4,
       date: new Date(2022, 8, 17),
       title: "Utilities",
       amount: "50",
-      category: "Fixed Costs",
+      category: "fixed costs",
     },
     {
       // id: b5,
       date: new Date(2022, 8, 26),
       title: "Airplane Tickets",
       amount: "32.57",
-      category: "Misc",
+      category: "misc",
     },
   ];
 
   const addExpenseHandler = (expenseData) => {
-    console.log("in expenses.js");
     console.log(expenseData);
     Items.push(expenseData);
     console.log(Items);
+  };
+
+  const [categoryFilter, setCategoryFilter] = useState("");
+
+  const filterCategory = (selectedCategory) => {
+    setCategoryFilter(selectedCategory);
+    console.log(selectedCategory);
+    // for (let i = 0; i < Items.length; i++) {
+    //   if (Items[i].category !== selectedCategory) {
+    //   }
+  };
+
+  const [yearFilter, setYearFilter] = useState("");
+
+  const filterYear = (selectedYear) => {
+    setYearFilter(selectedYear);
+    console.log(selectedYear);
+    // for (let i = 0; i < Items.length; i++) {
+    //   if (Items[i].category !== selectedCategory) {
+    //   }
   };
 
   return (
@@ -55,7 +76,8 @@ function Expenses(props) {
       <NewExpense onAddExpense={addExpenseHandler} />
       <Card className="expenses">
         <div>
-          <CategoryFilter />
+          <CategoryFilter onCategoryFilter={filterCategory} />
+          <YearFilter onYearFilter={filterYear} />
         </div>
         <ExpenseItem
           date={Items[0].date}
