@@ -24,7 +24,7 @@ function Expenses(props) {
       date: new Date(2022, 8, 25),
       title: "Denver Beer Co.",
       amount: "31.59",
-      category: "Eating Out",
+      category: "Going Out",
     },
     {
       // id: b4,

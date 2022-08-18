@@ -10,7 +10,7 @@ function ExpenseItem(props) {
     case "Groceries":
       color = "green";
       break;
-    case "Eating Out":
+    case "Going Out":
       color = "blue";
       break;
     case "Gas":

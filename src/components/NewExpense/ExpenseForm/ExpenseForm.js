@@ -53,6 +53,7 @@ function ExpenseForm(props) {
     <form onSubmit={submitHandler}>
       <div className="new-expense-form">
         <div className="new-expense_field">
+          <label>Category: </label>
           <select
             onChange={categoryChangeHandler}
             for="category"
@@ -62,7 +63,7 @@ function ExpenseForm(props) {
             <option value="">Select Category</option>
             <option value="groceries">Groceries</option>
             <option value="gas">Gas</option>
-            <option value="eating-out">Eating Out</option>
+            <option value="eating-out">Going Out</option>
             <option value="fixed-costs">Fixed Costs</option>
             <option value="misc">Misc</option>
           </select>
