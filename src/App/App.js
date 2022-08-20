@@ -6,11 +6,39 @@ import NewExpense from "../components/NewExpense/NewExpense/NewExpense";
 
 const dummy_expenses = [
   {
-    // id: b1,
+    id: 0.156,
+    date: new Date(2022, 0, 1),
+    title: "Rent",
+    amount: "750.00",
+    category: "fixed-costs",
+  },
+  {
+    id: 0.156,
+    date: new Date(2021, 0, 1),
+    title: "Expense Title",
+    amount: "158.47",
+    category: "groceries",
+  },
+  {
+    id: 0.156,
+    date: new Date(2023, 0, 1),
+    title: "Expense Title",
+    amount: "53.67",
+    category: "going-out",
+  },
+  {
+    id: 0.156,
     date: new Date(2022, 0, 1),
     title: "Expense Title",
-    amount: "0.00",
-    category: "Expense Category",
+    amount: "26.57",
+    category: "misc",
+  },
+  {
+    id: 0.156,
+    date: new Date(2021, 0, 1),
+    title: "Expense Title",
+    amount: "45.55",
+    category: "gas",
   },
 ];
 
