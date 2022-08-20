@@ -1,16 +1,19 @@
 import "./CategoryFilter.css";
 
 function CategoryFilter(props) {
-  function catgeoryFilterHandler(e) {
-    const selectedCategory = e.target.value;
-    props.onCategoryFilter(selectedCategory);
+  function dropDownChangeHandler(e) {
+    props.categoryFilter(e.target.value);
   }
 
   return (
     <div className="filter-container">
       <div className="title">Filter by Category</div>
       <div className="filter-dropdown">
-        <select id="category-filter" onChange={catgeoryFilterHandler} required>
+        <select
+          id="category-filter"
+          value={props.selected}
+          onChange={dropDownChangeHandler}
+        >
           <option value="">Select Category</option>
           <option value="groceries">Groceries</option>
           <option value="gas">Gas</option>

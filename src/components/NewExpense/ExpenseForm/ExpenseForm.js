@@ -5,28 +5,24 @@ import "./ExpenseForm.css";
 function ExpenseForm(props) {
   ////CATEGORY STATE/////
   const [enteredCategory, setCategory] = useState("");
-
   function categoryChangeHandler(e) {
     setCategory(e.target.value);
   }
 
   ////DATE STATE/////
   const [enteredDate, setDate] = useState("");
-
   function dateChangeHandler(e) {
     setDate(e.target.value);
   }
 
   ////TITLE STATE/////
   const [enteredTitle, setTitle] = useState("");
-
   function titleChangeHandler(e) {
     setTitle(e.target.value);
   }
 
   ////AMOUNT STATE/////
   const [enteredAmount, setAmount] = useState("");
-
   function amountChangeHandler(e) {
     setAmount(e.target.value);
   }
@@ -58,13 +54,13 @@ function ExpenseForm(props) {
             <option value="">Select Category</option>
             <option value="groceries">Groceries</option>
             <option value="gas">Gas</option>
-            <option value="eating-out">Going Out</option>
+            <option value="going-out">Going Out</option>
             <option value="fixed-costs">Fixed Costs</option>
             <option value="misc">Misc</option>
           </select>
         </div>
         <div className="new-expense_field">
-          <label for="date">Date: </label>
+          <label>Date: </label>
           <input
             onChange={dateChangeHandler}
             type="date"

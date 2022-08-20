@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./ExpenseItem.css";
 import ExpenseItemDate from "../ExpenseItemDate/ExpenseItemDate";
 import Card from "../../UI/Card/Card";
@@ -7,33 +6,27 @@ function ExpenseItem(props) {
   let categoryColor = props.category;
   let color;
   switch (categoryColor) {
-    case "Groceries":
+    case "groceries":
       color = "green";
       break;
-    case "Going Out":
+    case "going-out":
       color = "blue";
       break;
-    case "Gas":
+    case "gas":
       color = "red";
       break;
-    case "Fixed Costs":
+    case "fixed-costs":
       color = "purple";
       break;
     default:
       color = "gray";
   }
 
-  const [title, setTitle] = useState(props.title);
-
-  const clickHandler = () => {
-    setTitle("GOTCHA BITCH");
-  };
-
   return (
     <Card className="budget-detail">
       <ExpenseItemDate date={props.date} />
       <div className="details">
-        <p className="expense-title">{title}</p>
+        <p className="expense-title">{props.title}</p>
         <p>
           <strong>Category: </strong> {props.category}
         </p>
@@ -41,9 +34,7 @@ function ExpenseItem(props) {
       <p className="expense-amount" style={{ backgroundColor: color }}>
         ${props.amount}
       </p>
-      <button className="edit-button" onClick={clickHandler}>
-        Edit
-      </button>
+      <button className="edit-button">Edit</button>
     </Card>
   );
 }
