@@ -12,14 +12,16 @@ function Expenses(props) {
   //CATEGORY FILTER STATE
   const filterCategoryHandler = (selectedCategory) => {
     setCategoryFilter(selectedCategory);
-    console.log(selectedCategory);
   };
 
   //YEAR FILTER STATE
   const filterYearHandler = (selectedYear) => {
     setYearFilter(selectedYear);
-    console.log(selectedYear);
   };
+
+  const filteredYear = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === yearFilter;
+  });
 
   return (
     <div>
@@ -34,7 +36,7 @@ function Expenses(props) {
             yearFilter={filterYearHandler}
           />
         </div>
-        {props.items.map((expense) => (
+        {filteredYear.map((expense) => (
           <ExpenseItem
             key={expense.id}
             date={expense.date}

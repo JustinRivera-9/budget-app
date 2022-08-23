@@ -9,13 +9,13 @@ function ExpenseItem(props) {
     case "groceries":
       color = "green";
       break;
-    case "going-out":
+    case "going out":
       color = "blue";
       break;
     case "gas":
       color = "red";
       break;
-    case "fixed-costs":
+    case "fixed costs":
       color = "purple";
       break;
     default:
