@@ -23,19 +23,21 @@ function ExpenseItem(props) {
   }
 
   return (
-    <Card className="budget-detail">
-      <ExpenseItemDate date={props.date} />
-      <div className="details">
-        <p className="expense-title">{props.title}</p>
-        <p>
-          <strong>Category: </strong> {props.category}
+    <li>
+      <Card className="budget-detail">
+        <ExpenseItemDate date={props.date} />
+        <div className="details">
+          <p className="expense-title">{props.title}</p>
+          <p>
+            <strong>Category: </strong> {props.category}
+          </p>
+        </div>
+        <p className="expense-amount" style={{ backgroundColor: color }}>
+          ${props.amount}
         </p>
-      </div>
-      <p className="expense-amount" style={{ backgroundColor: color }}>
-        ${props.amount}
-      </p>
-      <button className="edit-button">Edit</button>
-    </Card>
+        <button className="edit-button">Edit</button>
+      </Card>
+    </li>
   );
 }
 

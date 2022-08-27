@@ -21,10 +21,10 @@ const dummy_expenses = [
   },
   {
     id: 0.146,
-    date: new Date(2023, 0, 1),
+    date: new Date(2022, 0, 1),
     title: "Expense Title",
     amount: "53.67",
-    category: "eating out",
+    category: "going out",
   },
   {
     id: 0.165,
@@ -46,6 +46,7 @@ function App() {
   const [expenses, setExpenses] = useState(dummy_expenses);
 
   const addExpenseHandler = (expense) => {
+    console.log(expense);
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });

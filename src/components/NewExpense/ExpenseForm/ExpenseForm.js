@@ -54,8 +54,8 @@ function ExpenseForm(props) {
             <option value="">Select Category</option>
             <option value="groceries">Groceries</option>
             <option value="gas">Gas</option>
-            <option value="going-out">Going Out</option>
-            <option value="fixed-costs">Fixed Costs</option>
+            <option value="going out">Going Out</option>
+            <option value="fixed costs">Fixed Costs</option>
             <option value="misc">Misc</option>
           </select>
         </div>
@@ -94,9 +94,16 @@ function ExpenseForm(props) {
             required
           />
         </div>
-        <div className="button-Background">
+        <div className="button-background">
           <button type="submit" className="submit-expense-button">
             Add Expense
+          </button>
+          <button
+            type="button"
+            className="cancel-expense-button"
+            onClick={props.onCancel}
+          >
+            Cancel
           </button>
         </div>
       </div>
