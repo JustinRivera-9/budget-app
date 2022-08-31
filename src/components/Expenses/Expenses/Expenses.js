@@ -4,6 +4,7 @@ import CategoryFilter from "../../Filters/CategoryFilter/CategoryFilter";
 import YearFilter from "../../Filters/YearFilter/YearFilter";
 import { useState } from "react";
 import ExpensesList from "../ExpensesList/ExpensesList";
+import ExpensesChart from "../ExpensesChart/ExpensesChart";
 
 function Expenses(props) {
   const [categoryFilter, setCategoryFilter] = useState("");
@@ -33,6 +34,7 @@ function Expenses(props) {
           />
           <YearFilter selected={yearFilter} yearFilter={filterYearHandler} />
         </div>
+        <ExpensesChart expenses={filteredYear} />
         <ExpensesList items={filteredYear} />
       </Card>
     </div>

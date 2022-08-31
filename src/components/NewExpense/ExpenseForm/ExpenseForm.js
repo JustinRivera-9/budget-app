@@ -35,7 +35,7 @@ function ExpenseForm(props) {
       category: enteredCategory,
       date: new Date(enteredDate),
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
     };
 
     props.onSubmitExpense(expenseData);
